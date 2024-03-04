@@ -1,0 +1,3 @@
+th, td {
+    outline: 1px solid black; /* This creates an inner border */
+}  
