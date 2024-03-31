@@ -1,0 +1,8 @@
+h1{
+    text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+}
+p {
+    box-shadow: 10 10 5 grey;
+    background-color:yellow;
+    width: 300px;
+}

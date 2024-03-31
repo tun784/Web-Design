@@ -1,0 +1,19 @@
+.shadow {
+    width: 130px;
+    box-shadow: 10px 10px 10px #000000;
+    margin: auto;
+    text-align: center;
+}
+.shadow1{
+    height: 150px;
+    background-color: #4caf50;
+    font-size: 40px;
+    color: white;
+    line-height: 400%;
+}
+.shadow2{
+    height: 30px;
+    background-color: white;
+    font-size: 14px;
+    line-height: 50%;
+}

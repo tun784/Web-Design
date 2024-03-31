@@ -1,0 +1,8 @@
+.opacity {
+    margin: auto;
+    width: 20%;
+    opacity: 0.5;
+}
+.opacity:hover {
+    opacity: 1;
+}

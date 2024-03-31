@@ -1,0 +1,9 @@
+.images{
+    margin: auto;
+    background: url(hoa.jpg) repeat;
+    width: auto;
+    height: auto;
+}
+p {
+    font-size: 20px;
+}
