@@ -1,0 +1,23 @@
+[
+  {
+    "id": 27,
+    "Fullname": "Hoàng Nhi",
+    "Email": "Nhi@gmail.com",
+    "Descriptions": "Tôi muốn hỏi chổ mình cần tuyển nhân viên ko ?",
+    "CreatedDate": "2018-06-03T00:00:00"
+  },
+  {
+    "id": 28,
+    "Fullname": "Tiên Viên ",
+    "Email": "Vien@gmail.com",
+    "Descriptions": "khi nào thì bên mình có máy tính Dell I8 ?",
+    "CreatedDate": "2018-06-02T00:00:00"
+  },
+  {
+    "id": 29,
+    "Fullname": "Hưng Đỗ Công",
+    "Email": "hungdocong82@gmail.com",
+    "Descriptions": "Quy trình đổi trả hàng của cửa hàng mình như thế nào ạ?",
+    "CreatedDate": "2021-04-28T00:00:00"
+  }
+]
