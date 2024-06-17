@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn:hover{
+            
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <form name="F1" method="get" style="border:#666 solid 1px; width: 61.20%; margin:0 auto; border-radius: 5px;">
+        <table style="margin: 0 auto;">
+            <tr style="background-color: #cccccc;">
+                <td colspan="2"><h3 style="margin-left: 20px;">THÔNG TIN NGƯỜI GỬI</h3></td>
+            </tr>
+            
+            <tr>
+                <td>* Người gửi</td>
+                <td><input id="txt_NameSender" type="text" placeholder="Nhập họ và tên" size="100"></td>
+            </tr>
+            
+            <tr>
+                <td>* E-Mail</td>
+                <td><input id="txt_EmailSender" type="text" placeholder="Nhập Email" size="100"></td>
+            </tr>
+
+            <tr>
+                <td>* Điện thoại</td>
+                <td><input id="txt_PhoneSender" type="text" placeholder="Nhập phone" size="100"></td>
+            </tr>
+
+
+        </table>
+    </form>
+
+    <br><br>
+
+    <form name="F2" method="get" style="border:#666 solid 1px; width: 62%; margin:0 auto; border-radius: 5px;">
+        <table style="margin: 0 auto;">
+            <tr style="background-color: #cccccc;">
+                <td colspan="2"><h3 style="margin-left: 20px;">THÔNG TIN NGƯỜI NHẬN</h3></td>
+            </tr>
+            
+            <tr>
+                <td>* Người nhận</td>
+                <td><input id="txt_NameReceiver" type="text" placeholder="Nhập họ và tên" size="100"></td>
+            </tr>
+            
+            <tr>
+                <td>* Điện thoại</td>
+                <td><input id="txt_PhoneReceiver" type="text" placeholder="Nhập phone" size="100"></td>
+            </tr>
+
+            <tr>
+                <td>* Địa chỉ</td>
+                <td><input id="txt_AdrReceiver" type="text" placeholder="Nhập địa chỉ" size="100"></td>
+            </tr>
+
+            <tr>
+                <td>* Tỉnh/TP</td>
+                <td>
+                    <select id="Tinh" name="Provine" style="margin-left: 2opx; width: 620px; height: 50px;">
+                        <option value="TP.HCM nội thành">TP.HCM nội thành</option>
+                        <option value="Hà Nội">Hà Nội</option>
+                        <option value="Huế">Huế</option>
+                        <option value="Đà Nẵng">Đà Nẵng</option>
+                        <option value="Quảng Ninh">Quảng Ninh</option>
+                        <option value="Cần Thơ">Cần Thơ</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>* Quận</td>
+                <td>
+                    <select id="Quan" name="Provine" style="margin-left: 2opx; width: 620px; height: 50px;">
+                        <option value="Quận 1">Quận 1</option>
+                        <option value="Quận 2">Quận 2</option>
+                        <option value="Quận 3">Quận 3</option>
+                        <option value="Quận Tân Phú">Quận Tân Phú</option>
+                        <option value="Quận Tân Bình">Quận Tân Bình</option>
+                        <option value="Quận Thủ Đức">Quận Thủ Đức</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button class="btn" style="position: relative; left: 336px; padding: 10px; border: 1px solid; background-color: lightgray; font-weight: bold; margin-bottom: 2px;" onclick="XuatThongTin()" type="button">GỬI THÔNG TIN </button>
+        <button class="btn" style="position: relative; left: 336px; padding: 10px; border: 1px solid; background-color: lightgray; font-weight: bold; margin-bottom: 2px;" onclick="XuatThongTinTrangKhac()" type="button">GỬI THÔNG TIN SANG TRANG 1B</button>
+
+    </form>
+
+    <h2 align = "center" class="dd">THÔNG TIN VỪA NHẬP</h2>
+    <div style="border: #666 solid 1px; width: 48%; margin: 10px auto; border-radius: 5px;">
+        <table style="margin: 0 auto">
+            <tr bgcolor = "#CCCCCC">
+                <td colspan="2" style="width: 300px; height: 50px; text-align: center;">
+                    <h3>THÔNG TIN NGƯỜI GỬI</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>* Người gửi: </td>
+                <td id="NameSender" class="dd"></td>
+            </tr>
+            <tr>
+                <td>* E-Mail: </td>
+                <td id="EmailSender" class="dd"></td>
+            </tr>
+            <tr>
+                <td>* Điện thoại: </td>
+                <td id="PhoneSender" class="dd"></td>
+            </tr>
+        </table>
+        <br>
+        <table style="margin: 0 auto">
+            <tr bgcolor = "#CCCCCC">
+                <td colspan="2" style="width: 300px; height: 50px; text-align: center;">
+                    <h3>THÔNG TIN NGƯỜI NHẬN</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>* Người nhận: </td>
+                <td id="NameReceiver" class="dd"></td>
+            </tr>
+            <tr>
+                <td>* Điện thoại: </td>
+                <td id="PhoneReceiver" class="dd"></td>
+            </tr>
+            <tr>
+                <td>* Địa chỉ: </td>
+                <td id="AdrReceiver" class="dd"></td>
+            </tr>
+            <tr>
+                <td>* Tỉnh/TP </td>
+                <td id="TinhTPReceiver" class="dd"></td>
+            </tr>
+            <tr>
+                <td>* Quận </td>
+                <td id="QuanReceiver" class="dd"></td>
+            </tr>
+        </table>
+
+        <script src="./frm1.js">
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: 1px solid black;
+            width: 350px;
+            height: 500px;
+            float: left;
+        }
+        h1{
+            margin-top: -0px;
+            width: 100%;
+            border: 0px solid blue;
+            background-color: rgb(110, 205, 240);
+            text-align: center;
+        }
+        p{
+            margin-left: 30px;
+        }
+        input{
+            margin-left: 30px;
+        }
+        textarea{
+            margin-left: 30px;
+            width: 300px;
+        }
+        button{
+            margin-left: 30px;
+            margin-top: 30px;
+            width: 130px;
+            height: 30px;
+        }
+        div{
+            float:right;
+            border: 1px solid black;
+            width: 900px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>HỘP THƯ GÓP Ý</h1>
+        <p>Họ Tên</p>
+        <input type="text" id="name" style="width: 300px;">
+        <p>Hộ khẩu</p>
+        <input type="text" id="live" style="width:300px">
+        <p>Góp ý về lĩnh vực</p>
+        <input type="checkbox" id="checkb1">
+        <label for="checkb1">Dịch vụ</label>
+        <input type="checkbox" id="checkb2">
+        <label for="checkb2">Sản phẩm</label>
+        <input type="checkbox" id="checkb3">
+        <label for="checkb3">Khác</label>
+        <p>Ngôn ngữ</p>
+        <input type="radio" name="language" id="ngonngu1" value="Anh">
+        <label for="ngonngu1">Anh</label>
+        <input type="radio" name="language" id="ngonngu2" value="Việt">
+        <label for="ngonngu2">Việt</label>
+        <p>Nội dung</p>
+        <textarea id="text"></textarea><br>
+        <button type="button" onclick="submitFeedback()" style="background-color: blue;">Gửi</button>
+        <button type="button" onclick="clearForm()" style="background-color: red;">Xóa</button>
+    </form>
+    <div>
+        <h1>BẢNG THÔNG TIN GÓP Ý</h1>
+        <table border="1" style="width: 100%; text-align: center;">
+            <tr>
+                <th>Họ Tên</th>
+                <th>Hộ Khẩu</th>
+                <th>Lĩnh vực</th>
+                <th>Ngôn ngữ</th>
+                <th>Nội dung góp ý</th>
+            </tr>
+            <tr>
+                <td id="NameReceiver"></td>
+                <td id="LiveReceiver"></td>
+                <td id="FieldReceiver"></td>
+                <td id="LanguageReceiver"></td>
+                <td id="TextReceiver"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="./frm4.js">
+        
+    </script>
+</body>
+</html>

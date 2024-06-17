@@ -1,0 +1,24 @@
+.slidear{
+    width: 400px;
+    height: 130px;
+    background-color: #00F;
+}
+.slidear ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+.slidear ul li{
+    line-height: 20px;
+    border-bottom: 1px solid #FFF;
+}
+.slidear ul li a{
+    text-decoration: none;
+    color: #FFF;
+    padding: 0 20px;
+}
+.slidear ul li a:hover{
+    font-weight: bold;
+    background-color: #900;
+}
