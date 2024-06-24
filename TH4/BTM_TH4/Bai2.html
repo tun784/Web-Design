@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gr-form{
+            border: 1px solid black;
+            width: 500px;
+            height: 393px;
+            margin: auto;
+        }
+        .option{
+            display: flex;
+        }
+        .Menu-option{
+            margin-top: 15px;
+        }
+        .line{
+            height: 1px;
+            width: 490px;
+            background-color: black;
+            margin-top: 10px;
+        }
+        .content{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form class="gr-form" action="">
+        <div class="content">
+            <div>
+                <label for="Username">Username : </label>
+                <input type="text" id="Username">
+            </div>
+            <div>
+                <label for="Password">Password :</label>
+                <input type="password" id="Password" size="50">
+            </div>
+            <input style="padding: 2px;" type="submit" value="ĐĂNG NHẬP">
+            <div class="line"></div>
+            <div class="option">
+                <p class="title">Hobby: </p>
+                <div class="Menu-option">
+                    <input type="checkbox"> Music <br>
+                    <input type="checkbox"> Film <br>
+                    <input type="checkbox"> Sport
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="option">
+                <p class="title">User for </p>
+                <div class="Menu-option">
+                    <input type="radio"> Home <br>
+                    <input type="radio"> Business <br>
+                    <input type="radio"> Goverment <br>
+                    <input type="radio"> Educational Institution <br>
+                    <input type="radio"> Other
+                </div>
+            </div>
+            <div style="margin-bottom: 10px;" class="line"></div>
+            <input type="submit" value="Chuỗi reset">
+            <div style="margin-bottom: 10px;" class="line"></div>
+            <button style="padding: 3px 10px;">Ok</button>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </form>
+</body>
+</html>

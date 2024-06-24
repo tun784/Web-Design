@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bai 20: Tạo trang Bai20.html sử dụng component - Navbar ngang và đứng như sau:</title>
+<style>
+.navbar {
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+    
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+  <div class="logo">
+    <img src="images.png" alt="ITTC Logo">
+    <h1></h1>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Link</a></li>
+    <li class="dropdown">
+      <a href="#">Dropdown</a>
+      <div class="dropdown-content">
+        <a href="#">Action</a>
+        <a href="#">Another action</a>
+        <a href="#">Something else here</a>
+      </div>
+    </li>
+    <li><a href="#">Disabled</a></li>
+  </ul>
+  <form>
+    <input type="text" placeholder="Search" name="search">
+    <button type="submit">Search</button>
+  </form>
+</div>
+</body>
+</html>
