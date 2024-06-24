@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Giới Thiệu",
+    "link": null,
+    "meta": "gioi-thieu",
+    "hide": "1",
+    "order": 3,
+    "datebegin": "2018-03-09T00:00:00"
+  },
+  {
+    "id": 2,
+    "name": "Cửa Hàng",
+    "link": null,
+    "meta": "cua-hang",
+    "hide": "1",
+    "order": 1,
+    "datebegin": "2019-04-22T00:00:00"
+  },
+  {
+    "id": 3,
+    "name": "Giỏ Hàng",
+    "link": null,
+    "meta": "gio-hang",
+    "hide": "0",
+    "order": 2,
+    "datebegin": "2019-04-22T00:00:00"
+  },
+  {
+    "id": 4,
+    "name": "Tin tức - sự kiện",
+    "link": null,
+    "meta": "tin-tuc-su-kien",
+    "hide": "1",
+    "order": 4,
+    "datebegin": "2018-03-09T00:00:00"
+  },
+  {
+    "id": 6,
+    "name": "Liên hệ",
+    "link": null,
+    "meta": "lien-he",
+    "hide": "1",
+    "order": 6,
+    "datebegin": "2018-03-09T00:00:00"
+  }
+]

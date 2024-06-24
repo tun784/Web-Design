@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cửa hàng</title>
+
+  <!-- Google Fonts -->
+  <link href="Content/css/titillium.css" rel="stylesheet" type="text/css" />
+  <link href="Content/css/roboto.css" rel="stylesheet" type="text/css" />
+  <link href="Content/css/releway.css" rel="stylesheet" type="text/css" />
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="Content/css/bootstrap.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="Content/css/font-awesome.min.css" />
+  <link href="Content/css/jquery-ui.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="Content/css/owl.carousel.css" />
+  <link rel="stylesheet" href="Content/css/style.css" />
+  <link rel="stylesheet" href="Content/css/responsive.css" />
+  <link rel="stylesheet" href="Content/css/default.css" />
+</head>
+
+<body>
+  <header class="header-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6" style="width: 20%">
+          <div class="logo">
+            <h1>
+              <a href="index.html"><img src="Content/img/logo.png" /></a>
+            </h1>
+          </div>
+        </div>
+        <a href="cart.html" class="header__cart">
+          <span>Giỏ hàng</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- End mainmenu area -->
+  <div class="container">
+    <div id="product-detail" class="row">
+
+    </div>
+  </div>
+  <script>
+    function loadProduct(productId) {
+      fetch('products.json')
+        .then(response => response.json())
+        .then(products => {
+          const product = products.find(p => p.id === productId);
+          if (product) {
+            const productDetailDiv = document.getElementById('product-detail');
+            productDetailDiv.innerHTML = `
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="product-images">
+                      <div class="product-main-img">
+                        <img src="Content/img/${product.img}" alt="${product.name}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="product-inner">
+                      <h2 class="product-name">${product.name}</h2>
+                      <div class="product-inner-price">
+                        <ins>${product.newprice} VNĐ</ins> <del>${product.price} VNĐ</del>
+                      </div>
+                      <form action="/them-gio-hang?productId=${product.id}&quantity=1" class="#">
+                        <a class="add_to_cart_button" style="padding:8px" data-quantity="1" data-product_sku="" data-product_id="${product.id}" rel="nofollow" href="/them-gio-hang?productId=${product.id}&quantity=1">Thêm vào Giỏ</a>
+                      </form>
+                      <div class="product-inner-category" style="margin-top:15px">
+                        <p>Thể loại: <a href="#">${product.name}</a></p>
+                      </div>
+                      <div>
+                        <ul class="product-tab">
+                          <li><h2>Miêu tả chi tiết</h2></li>
+                        </ul>
+                        <div class="tab-content">
+                          <div role="tabpanel" class="tab-pane fade in active" id="home">
+                            <h2>Chi tiết sản phẩm</h2>
+                            <p class="mota">${product.description.replace(/\n/g, '<br>')}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `;
+          } else {
+            document.getElementById('product-detail').innerHTML = '<p>Product not found</p>';
+          }
+        })
+        .catch(error => console.error('Error loading product:', error));
+    }
+  </script>
+  <footer>
+    <div class="footer-top-area">
+      <div class="zigzag-bottom"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="footer-about-us">
+              <h2><span>Thegioididong</span></h2>
+              <p>
+                Thegioididong luôn cung cấp các mặt hàng tốt, rẻ, chất lượng nhất
+                đến với khách hàng và là một trang web bán hàng online uy tín.
+                Công ty luôn chú trọng đến việc đưa đến sản phẩm tốt và chất
+                lượng nhất đến với người dùng
+              </p>
+              <div class="footer-social">
+                <a href="https://www.facebook.com/DhCongThuongHCM" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@DHCongthuong" target="_blank"><i class="fa fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="footer-menu">
+              <h2 class="footer-wid-title">Thông Tin</h2>
+              <ul>
+                <li><a href="#">Shop Thegioididong</a></li>
+                <li>
+                  <a href="https://maps.app.goo.gl/AJh9uUu2UN6fj9udA">Địa chỉ: 140 Lê Trọng Tấn, Phường Sơn Kỳ, Tân Phú,
+                    TP.HCM
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d489.88362050300685!2d106.628384!3d10.8060301!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752be27d8b4f4d%3A0x92dcba2950430867!2sHCMC%20University%20of%20Industry%20and%20Trade!5e0!3m2!1sen!2s!4v1718533969980!5m2!1sen!2s"
+          width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="Content/js/product.js"></script>
+  <script src="Content/js/categories.js"></script>
+</body>
+
+</html>

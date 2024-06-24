@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cửa hàng</title>
+
+  <!-- Google Fonts -->
+  <link href="Content/css/titillium.css" rel="stylesheet" type="text/css" />
+  <link href="Content/css/roboto.css" rel="stylesheet" type="text/css" />
+  <link href="Content/css/releway.css" rel="stylesheet" type="text/css" />
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="Content/css/bootstrap.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="Content/css/font-awesome.min.css" />
+  <link href="Content/css/jquery-ui.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="Content/css/owl.carousel.css" />
+  <link rel="stylesheet" href="Content/css/style.css" />
+  <link rel="stylesheet" href="Content/css/responsive.css" />
+  <link rel="stylesheet" href="Content/css/default.css" />
+</head>
+
+<body>
+  <header class="header-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6" style="width: 20%">
+          <div class="logo">
+            <h1>
+              <a href="index.html"><img src="Content/img/logo.png" /></a>
+            </h1>
+          </div>
+        </div>
+        <a href="cart.html" class="header__cart">
+          <span>Giỏ hàng</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- End mainmenu area -->
+  <!-- <div class="taskSearch">
+    <div class="container">
+      <div class="row">
+        <div class="manuwrap">
+          <div class="manunew">
+            <input type="hidden" id="menuhang" value="0" />
+            <a href="loc-product?category=1">
+              <img src="Content/img/iPhone-(Apple)42-b_16.jpg" />
+            </a>
+            <a href="loc-product?category=2">
+              <img src="Content/img/Samsung42-b_25.jpg" />
+            </a>
+            <a href="loc-product?category=3">
+              <img src="Content/img/OPPO42-b_23.jpg" />
+            </a>
+
+            <h2>Code nay khong phai cua toi</h2>
+
+            <a href="loc-product?category=4">
+              <img src="Content/img/Nokia42-b_21.jpg" />
+            </a>
+          </div>
+          <div class="clr"></div>
+        </div>
+      </div>
+      <div class="row">
+        <ul class="filter">
+          <li class="title">
+            <a href="javascript:;">Chọn mức giá:</a>
+          </li>
+          <li class="frange">
+            <a href="loc-product?toprice=0&fromprice=2"> Dưới 2 triệu </a>
+            <a href="loc-product?toprice=2&fromprice=4"> Từ 2 - 4 triệu </a>
+            <a href="loc-product?toprice=4&fromprice=7"> Từ 4 - 7 triệu </a>
+            <a href="loc-product?toprice=7&fromprice=13"> Từ 7 - 13 triệu </a>
+            <a href="loc-product?toprice=13&fromprice=1300"> Trên 13 triệu </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+  <!-- Sản phẩm mới ra mắt-->
+  <div class="maincontent-area" id="spmoi">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="latest-product">
+            <h2 class="section-title">Sản phẩm mới ra mắt</h2>
+            <div class="product-carousel" id="new-products-carousel">
+              <!-- Sản phẩm sẽ được load ở đây -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch('data/products.json')
+        .then(response => response.json())
+        .then(products => {
+          const newProductsCarousel = document.getElementById('new-products-carousel');
+          products.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.classList.add('single-product');
+
+            let priceHTML;
+            if (product.newprice != null) {
+              priceHTML = `
+                                  <ins>${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.newprice)}</ins>
+                                  <del>${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}</del>
+                              `;
+            } else {
+              priceHTML = `<ins>${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}</ins>`;
+            }
+
+            productDiv.innerHTML = `
+                              <div class="product-f-image">
+                                  <img src="Content/img/${product.img}" alt="${product.name}">
+                                  <div class="product-hover">
+                                      <a href="product.html?id=${product.id}" class="view-details-link"><i class="fa fa-link"></i> Thông tin</a>
+                                  </div>
+                              </div>
+                              <h2><a href="product.html?id=${product.id}">${product.name}</a></h2>
+                              <div class="product-carousel-price">
+                                  ${priceHTML}
+                              </div>
+                          `;
+            newProductsCarousel.appendChild(productDiv);
+          });
+        });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch('data/products.json')
+        .then(response => response.json())
+        .then(products => {
+          const quickViewCarousel = document.getElementById('quick-view-carousel');
+          products.forEach(product => {
+            if (product.newprice == null) {
+              const productDiv = document.createElement('div');
+              productDiv.classList.add('single-product');
+              productDiv.innerHTML = `
+                                  <div class="product-f-image">
+                                      <img src="Content/img/${product.img}" alt="${product.name}">
+                                      <div class="product-hover">
+                                          <a href="product.html?id=${product.id}" class="view-details-link"><i class="fa fa-link"></i> Thông tin</a>
+                                      </div>
+                                  </div>
+                                  <h2><a href="/product/${product.meta}/${product.id}">${product.name}</a></h2>
+                                  <div class="product-carousel-price">
+                                      <ins>${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}</ins>
+                                  </div>
+                              `;
+              quickViewCarousel.appendChild(productDiv);
+            }
+          });
+        });
+    });
+  </script>
+
+  <div class="footer-top-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="footer-about-us">
+            <h2><span>Thegioididong</span></h2>
+            <p>
+              Thegioididong luôn cung cấp các mặt hàng tốt, rẻ, chất lượng nhất
+              đến với khách hàng và là một trang web bán hàng online uy tín.
+              Công ty luôn chú trọng đến việc đưa đến sản phẩm tốt và chất
+              lượng nhất đến với người dùng
+            </p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/DhCongThuongHCM" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.youtube.com/@DHCongthuong" target="_blank"><i class="fa fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="footer-menu">
+            <h2 class="footer-wid-title">Thông Tin</h2>
+            <ul>
+              <li><a href="#">Shop Thegioididong</a></li>
+              <li>
+                <a href="https://maps.app.goo.gl/AJh9uUu2UN6fj9udA">Địa chỉ: 140 Lê Trọng Tấn, Phường Sơn Kỳ, Tân hú, TP.HCM
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d489.88362050300685!2d106.628384!3d10.8060301!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752be27d8b4f4d%3A0x92dcba2950430867!2sHCMC%20University%20of%20Industry%20and%20Trade!5e0!3m2!1sen!2s!4v1718533969980!5m2!1sen!2s"
+        width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <!-- End footer bottom area -->
+  <script src="Content/js/categories.js"></script>
+  <script src="Content/js/index.js"></script>
+  <script src="Content/js/main.js"></script>
+  <script src="Content/js/product.js"></script>
+  <script src="Content/js/script.js"></script>
+  <script src="Content/js/userChart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Apple IPhone",
+    "link": "Content/img/iPhone-(Apple)42-b_16.jpg",
+    "meta": "apple-iphone",
+    "hide": "1",
+    "order": 1,
+    "datebegin": "2018-03-13"
+  },
+  {
+    "id": 2,
+    "name": "Sam Sung",
+    "link": "Content/img/Samsung42-b_25.jpg",
+    "meta": "sanm-sung",
+    "hide": "1",
+    "order": 2,
+    "datebegin": "2018-03-13"
+  },
+  {
+    "id": 3,
+    "name": "Oppo",
+    "link": "Content/img/OPPO42-b_23.jpg",
+    "meta": "op-po",
+    "hide": "1",
+    "order": 3,
+    "datebegin": "2018-03-13"
+  },
+  {
+    "id": 4,
+    "name": "Nokia",
+    "link": "Content/img/Nokia42-b_21.jpg",
+    "meta": "noki-a",
+    "hide": "1",
+    "order": 4,
+    "datebegin": "2018-03-13"
+  },
+  {
+    "id": 5,
+    "name": "Xiaomi",
+    "link": "Content/img/logo-xiaomi-big-220x48.jpg",
+    "meta": "xiaomi-",
+    "hide": "1",
+    "order": null,
+    "datebegin": "2021-04-25"
+  },
+  {
+    "id": 7,
+    "name": "Vivo",
+    "link": "Content/img/Vivo42-b_50.jpg",
+    "meta": "vivo-",
+    "hide": "1",
+    "order": null,
+    "datebegin": "2021-04-27"
+  }
+]

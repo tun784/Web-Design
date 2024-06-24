@@ -1,0 +1,18 @@
+[
+  {
+    "ID": "ADD",
+    "Name": "Thêm mới"
+  },
+  {
+    "ID": "DELETE",
+    "Name": "Xóa"
+  },
+  {
+    "ID": "EDIT",
+    "Name": "Sửa"
+  },
+  {
+    "ID": "VIEW",
+    "Name": "Xem"
+  }
+]
