@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Điện thoại Việt</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link href='./img/logo/Điện thoại Việt.png' rel='icon' type='image/x-icon' />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      padding-top: 20px;
+    }
+    .form-check {
+      margin-bottom: 10px;
+    }
+    .total-cart-info {
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 10px;
+      border-collapse: collapse;
+    }
+    .total-cart-info p {
+      padding: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="d-flex justify-content-between align-items-center py-3">
+      <h1>Điện thoại Việt</h1>
+    </header>
+    
+    <div class="notifications"></div>
+    
+    <div id="checkoutForm" class="d-none mt-5">
+      <div class="row">
+        <div class="col-lg-8">
+          <h2>Thông Tin Khách Hàng</h2>
+          <form id="customerForm">
+            <div class="form-group">
+              <label for="fullName">Họ và tên <i class="fas fa-user"></i></label>
+              <input type="text" class="form-control" id="fullName" required>
+            </div>
+            <div class="form-group">
+              <label for="phoneNumber">Số điện thoại <i class="fas fa-phone"></i></label>
+              <input type="text" class="form-control" id="phoneNumber" required>
+            </div>
+            <div class="form-group">
+              <label for="address">Địa chỉ <i class="fas fa-map-marker-alt"></i></label>
+              <input type="text" class="form-control" id="address" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email <i class="fas fa-envelope"></i></label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+              <label for="gender">Giới tính <i class="fas fa-venus-mars"></i></label><br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                <label class="form-check-label" for="male">Nam</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                <label class="form-check-label" for="female">Nữ</label>
+              </div>
+            </div>
+            <h3>Phương Thức Thanh Toán <i class="fas fa-credit-card"></i></h3>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="cash" value="cash">
+              <label class="form-check-label" for="cash"><i class="fas fa-money-bill-wave"></i> Tiền mặt</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="bankTransfer" value="bankTransfer">
+              <label class="form-check-label" for="bankTransfer"><i class="fas fa-university"></i> Chuyển khoản</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="cod" value="cod">
+              <label class="form-check-label" for="cod"><i class="fas fa-truck"></i> Ship COD</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3" id="confirm">Xác nhận thanh toán</button>
+          </form>
+        </div>
+        <div class="col-lg-4 cart-info">
+          <h2>Giỏ Hàng <i class="fas fa-shopping-cart"></i></h2>
+          <div class="total-cart-info">
+            <p>Số lượng sản phẩm: <span id="productQuantity"></span></p>
+            <p>Tên sản phẩm: <span id="productName"></span></p>
+            <p>Tổng thành tiền: <span id="totalPrice"></span></p>
+          </div>
+          <div class="form-group">
+            <label for="promoCode">Mã khuyến mãi <i class="fas fa-gift"></i></label>
+            <input type="text" class="form-control" id="promoCode">
+            <button class="btn btn-secondary mt-2" onclick="applyPromoCode()">Áp dụng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./js/data.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('checkoutForm').classList.remove('d-none');
+
+      // Retrieve product details from localStorage
+      const productDetailsJSON = localStorage.getItem('selectedProduct');
+      const productDetails = JSON.parse(productDetailsJSON);
+
+      // Display product details in the cart
+      document.getElementById('productQuantity').textContent = productDetails.quantity;
+      document.getElementById('productName').textContent = productDetails.name;
+      document.getElementById('totalPrice').textContent = productDetails.price;
+
+      // Retrieve and display user details if available
+      const userJSON = localStorage.getItem('currentuser');
+      const user = JSON.parse(userJSON);
+
+      if (user) {
+        document.getElementById('fullName').value = user.fullname;
+        document.getElementById('phoneNumber').value = user.phone;
+        document.getElementById('address').value = user.address;
+        document.getElementById('email').value = user.email;
+        
+      }
+      
+
+ 
+      });
+
+      // Handle form submission
+      const customerForm = document.getElementById('customerForm');
+      customerForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+        
+
+        // Example: Show success message
+        createToast_success("Thanh toán thành công");
+      });
+
+      function openCart() {
+        showCart();
+        document.querySelector('.modal-cart').classList.add('open');
+        body.style.overflow = "hidden";
+    }
+
+    function closeCart() {
+        document.querySelector('.modal-cart').classList.remove('open');
+        body.style.overflow = "auto";
+        updateAmount();
+    }
+    
+    
+  
+  </script>
+</body>
+</html>

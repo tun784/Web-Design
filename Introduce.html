@@ -1,0 +1,104 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điện thoại Việt</title>
+    <link href='./img/logo/Điện thoại Việt.png' rel='icon' type='image/x-icon' />
+    <link rel="stylesheet" href='./font/font-awesome-pro-v6-6.2.0/css/all.min.css'/>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .title{
+            color: #191919;
+            text-transform: capitalize;
+            text-align: center;
+            font-size: 45px;
+            font-weight: bold;
+            margin-bottom: 70px;
+        }
+        .about-content{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .image{
+            flex: 1;
+            margin-right: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .image img{
+            width: 100%;
+            transition: transform .3s ease;
+
+        }
+        .image:hover img{
+            transform: scale(1.1);
+        }
+        .content{
+            flex: 1;
+            margin-left: 20px; 
+        }
+        .content p {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+        button{
+            background-color:#358E9D;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 13px 30px;
+            border-radius: 30px;
+            transition: .4s;
+            margin-top: 20px;
+        }
+        button:hover{
+            color: #358E9D;
+            background: transparent;
+            border: 2px solid #358E9D;
+            cursor: pointer;
+        }
+        @media screen and  (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .image, .content {
+                margin: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="notifications"></div>
+    <div class="container">
+        <h1 class="title">Giới thiệu</h1>
+        <div class="about-content">
+            <div class="image">
+                <img src="./img/About_Us//Điện thoại việt.png">
+            </div>
+            <div class="content">
+                <p> Tại Điện thoại Việt, chúng tôi tự hào mang đến những trải nghiệm mua sắm 
+                    điện thoại di động tinh tế và sang trọng, giúp bạn tìm thấy người bạn đồng 
+                    hành công nghệ hoàn hảo. Với sự tận tâm và chuyên nghiệp, chúng tôi cam kết
+                    đồng hành cùng bạn trong từng bước chọn lựa.
+                </p>
+                <a href="./web.html" class="back-home"><button type="button">Trang chủ</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

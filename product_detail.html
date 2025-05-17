@@ -1,0 +1,425 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điện thoại Việt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href='./img/logo/Điện thoại Việt.png' rel='icon' type='image/x-icon' />
+    <link rel="stylesheet" href="./css/product_detail.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/header_footer_new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href='./font/font-awesome-pro-v6-6.2.0/css/all.min.css'/>  
+</head>
+<body>
+    <!---------------------------------------------------------Header---------------------------------------------------->
+    <header>
+        <div class="header-middle">
+            <div class="container">
+                <div class="header-middle-left">
+                    <div class="header-logo">
+                        <a href="./web.html">
+                            <img src="./img/logo/Điện thoại Việt.png" alt="" class="header-logo-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="header-middle-center">
+                    </form>
+                    <div class="form-search" id="search-container">
+                        <span class="search-btn"><i class="fa-light fa-magnifying-glass"></i></span>
+                        <input
+                          type="search"
+                          class="form-search-input"
+                          id="search-input"
+                          placeholder="Tìm kiếm sản phẩm.."/>
+                    </div>
+                </div>
+                <div class="header-middle-right">
+                    <ul class="header-middle-right-list">
+                        <li class="header-middle-right-item dnone open" onclick="openSearchMb()">
+                            <div class="cart-icon-menu">
+                                <i class="fa-light fa-magnifying-glass"></i>
+                            </div>
+                        </li>
+                        <li class="header-middle-right-item close" onclick="closeSearchMb()">
+                            <div class="cart-icon-menu">
+                                <i class="fa-light fa-circle-xmark"></i>
+                            </div>
+                        </li>
+                        <li class="header-middle-right-item dropdown open">
+                            <i class="fa-light fa-user"></i>
+                            <div class="auth-container">
+                                <span class="text-dndk">Đăng nhập / Đăng ký</span>
+                                <span class="text-tk">Tài khoản <i class="fa-solid fa-caret-down"></i></span>
+                            </div>
+                            <ul class="header-middle-right-menu">
+                                <li><a id="login" href="javascript:;"><i class="fa-light fa-right-to-bracket"></i> Đăng nhập</a></li>
+                                <li><a id="signup" href="javascript:;"><i class="fa-light fa-user-plus"></i> Đăng ký</a></li>
+                            </ul>
+                        </li>
+                        <li class="header-middle-right-item open" onclick="openCart()">
+                            <div class="cart-icon-menu">
+                                <i class="fa-light fa-basket-shopping"></i>
+                                <span class="count-product-cart">0</span>
+                            </div>
+                            <span>Giỏ hàng</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    
+
+    <!---------------------------------------------------------Header-bottom---------------------------------------------------->
+    <nav class="header-bottom">
+        <div class="container">
+            <ul class="menu-list">
+                <li class="menu-list-item"><a href="./web.html" class="menu-link">Trang chủ</a></li>
+                <li class="menu-list-item"><a href="./web.html" class="menu-link">Tất cả</a></li>
+                <li class="menu-list-item"><a href="./Introduce.html" class="menu-link">Giới thiệu</a></li>             
+                <li class="menu-list-item"><a class="menu-link" id="pr">Iphone</a></li>
+                <li class="menu-list-item"><a class="menu-link" id="pr">SamSung</a></li>
+                <li class="menu-list-item"><a class="menu-link" id="pr">Xiaomi</a></li>
+                <li class="menu-list-item"><a class="menu-link" id="pr">Oppo</a></li>
+                <li class="menu-list-item"><a class="menu-link" id="pr">Vivo</a></li>
+                <li class="menu-list-item"><a class="menu-link" id="pr">Khác</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+
+
+    <div class="flex-box">
+        <div class="left">
+            <div class="big-img">
+                <img id = "big-img" src="#">
+            </div>
+            <div class="images">
+                <div>
+                    <img  class="small-img-1" src="#" onclick="showImg(this.src)">
+                </div>
+                <div>
+                    <img  class="small-img-2" src="#" onclick="showImg(this.src)">
+                </div>
+                <div>
+                    <img  class="small-img-3" src="#" onclick="showImg(this.src)">
+                </div>
+                <div>
+                    <img  class="small-img-4" src="#" onclick="showImg(this.src)">
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="url"><a href="./web.html">Home</a> > <span class="pname"></span></div>
+            <div class="pname"></div>
+            <div class="ratings">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="price"></div>       
+            <div class="quantity">
+                <p>Số lượng :</p>
+                <input class="input-qty" type="number" min="1" max="5" value="1">
+            </div>
+            <div class="btn-box">
+                <button class="cart-btn">Thêm vào giỏ hàng</button>
+                <button class="buy-btn">Mua ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="detail_product">
+        <h2>Thông số kỹ thuật</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td class="nameTag">Kích thước màn hình</td>
+                    <td class="screen-size"></td>
+                </tr>
+                <tr>
+                    <td class="nameTag">Pin</td>
+                    <td class="battery"></td>
+                </tr>
+                <tr>
+                    <td class="nameTag">Camera sau</td>
+                    <td class="camera-sau"></td>
+                </tr>
+                <tr>
+                    <td class="nameTag">Camera trước</td>
+                    <td class="camera-truoc"></td>
+                </tr>
+                <tr>
+                    <td class="nameTag">Dung lượng RAM</td>
+                    <td class="ram"></td>
+                </tr>
+                <tr>
+                    <td class="nameTag">Bộ nhớ trong</td>
+                    <td class="rom"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!---------------------------------------------------------Form box login/singup---------------------------------------------------->
+    <div class="modal signup-login">
+        <div class="modal-container">
+            <button class="form-close" onclick="closeModal()"><i class="fa-regular fa-xmark"></i></button>
+            <div class="forms mdl-cnt" style="background-color: #fff;">
+                <div class="form-content sign-up">
+                    <h3 class="form-title">
+                        Đăng ký tài khoản
+                    </h3>
+                    <p class="form-description">Đăng ký thành viên để mua hàng và nhận những ưu đãi đặc biệt từ chúng
+                        tôi </p>
+                    <form action="" class="signup-form">
+                        <div class="form-group">
+                            <label for="fullname" class="form-label">Tên đầy đủ</label>
+                            <input id="fullname" name="fullname" type="text" placeholder="Nhập họ và tên"
+                                class="form-control">
+                            <span class="form-message-name form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Số điện thoại</label>
+                            <input id="phone" name="phone" type="text" placeholder="Nhập số điện thoại"
+                                class="form-control">
+                            <span class="form-message-phone form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Mật khẩu</label>
+                            <input id="password" name="password" type="password" placeholder="Nhập mật khẩu"
+                                class="form-control">
+                            <span class="form-message-password form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
+                            <input id="password_confirmation" name="password_confirmation"
+                                placeholder="Nhập lại mật khẩu" type="password" class="form-control">
+                            <span class="form-message-password-confi form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <input class="checkbox" name="checkbox" required="" type="checkbox" id="checkbox-signup">
+                            <label for="checkbox-signup" class="form-checkbox">Tôi đồng ý với <a href="#"
+                                    title="chính sách trang web" target="_blank">chính sách trang web</a></label>
+                            <p class="form-message-checkbox form-message"></p>
+                        </div>
+                        <button class="form-submit" id="signup-button">Đăng ký</button>
+                    </form>
+                    <p class="change-login">Bạn đã có tài khoản ? <a href="javascript:;" class="login-link">Đăng nhập
+                            ngay</a></p>
+                </div>
+                <div class="form-content login">
+                    <h3 class="form-title">
+                        Đăng nhập tài khoản
+                    </h3>
+                    <p class="form-description">Đăng nhập thành viên để mua hàng và nhận những ưu đãi đặc biệt từ chúng
+                        tôi</p>
+                    <form action="" class="login-form">
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Số điện thoại</label>
+                            <input id="phone-login" name="phone" type="text" placeholder="Nhập số điện thoại"
+                                class="form-control">
+                            <span class="form-message phonelog"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Mật khẩu</label>
+                            <input id="password-login" name="password" type="password" placeholder="Nhập mật khẩu"
+                                class="form-control">
+                            <span class="form-message-check-login form-message"></span>
+                        </div>
+                        <button class="form-submit" id="login-button">Đăng nhập</button>
+                    </form>
+                    <p class="change-login">Bạn chưa có tài khoản ? <a href="javascript:;" class="signup-link">Đăng kí
+                            ngay</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="product-count"></div>
+    <div class="notifications"></div>
+
+
+    <!---------------------------------------------------------Footer---------------------------------------------------->
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <h3><span>Điện thoại Việt</span></h3>
+
+            <p class="footer-links">
+                <a href="./web.html">Trang chủ</a>
+                |
+                <a href="./Introduce.html">Giới thiệu</a>
+                |
+                <a href="#">Liên hệ</a>
+            </p>
+
+            <p class="footer-company-name">Copyright © 2024 <strong>Điện thoại Việt</strong> All rights reserved</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <p><span>Địa chỉ:</span>
+                    HUIT</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>0383 156 689</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="#">xyz@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Giới thiệu</span>
+                <strong>Điện thoại Việt</strong>: là một thương hiệu mới nổi và cùng với sự quyết tâm, chúng tôi hy vọng 
+                mang đến cho bạn một trải nghiệm tốt nhất khi ghé thăm. Hãy theo dõi chúng tôi để biết thêm chi tiết.                                             
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    
+    
+
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+
+        
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const buyButtons = document.querySelectorAll('.buy-btn');
+            buyButtons.forEach(function(button) {
+              button.addEventListener('click', function() {
+                window.location.href = './thanhtoan.html'; 
+              });
+            });
+          });   
+        
+
+        let headerBottom = document.querySelector('.header-bottom');
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Cuộn xuống, ẩn thanh menu
+                headerBottom.classList.add('hided');
+            } else {
+                // Cuộn lên, hiển thị thanh menu
+                headerBottom.classList.remove('hided');
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Tránh giá trị âm cho lastScrollTop
+        });
+        // Lấy id của sản phẩm từ localStorage
+        const currentProductId = localStorage.getItem('current_product');
+        const productId = parseInt(currentProductId);
+        
+
+        let bigImg = document.querySelector('.big-img img');
+        function showImg(pic){
+            bigImg.src = pic;
+        }
+        window.onload = () => {
+            //alert(productId);
+            displayProductDetails(currentProductId)
+            kiemtradangnhap();
+        };
+
+
+
+let id = localStorage.getItem('current_product')
+document.addEventListener('DOMContentLoaded', function() {
+    const buyButtons = document.querySelectorAll('.buy-btn');
+    buyButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            
+            
+            // Retrieve product details
+            const productName = document.querySelector('.pname').textContent;
+            const productPrice = document.querySelector('.price').textContent;
+            const productQuantity = document.querySelector('.input-qty').value;
+
+            // Store product details in localStorage
+            const productDetails = {
+                name: productName,
+                price: productPrice,
+                quantity: productQuantity,  
+                
+            };
+            localStorage.setItem('selectedProduct', JSON.stringify(productDetails));
+
+            // Redirect to the checkout page
+            window.location.href = './thanhtoan.html';
+        });
+    });
+});
+
+    // Them san pham vao gio hang
+const productbtn = document.querySelector('.btn-box .cart-btn');
+let product_id = localStorage.getItem('current_product');
+let currentProductNumber = Number(product_id);
+
+productbtn.addEventListener('click', (e) => {
+    if (localStorage.getItem('currentuser')) {;
+        addCart(currentProductNumber);
+    } else {
+        createToast_error("Bạn chưa đăng nhập vào tài khoản!")
+    }
+
+})
+
+
+
+
+    // Lay so luong hang
+function getAmountCart() {
+    let currentuser = JSON.parse(localStorage.getItem('currentuser'))
+    let amount = 0;
+    currentuser.cart.forEach(element => {
+        amount += parseInt(element.soluong);
+    });
+    return amount;
+}
+
+amount = getAmountCart()
+
+    
+    
+
+
+window.onload = () => {
+    // Assume displayProductDetails and kiemtradangnhap are defined elsewhere
+    
+    displayProductDetails(localStorage.getItem('current_product'));
+    kiemtradangnhap();
+    updateAmount()
+    
+};
+
+
+        
+    </script>
+</body>
+</html>

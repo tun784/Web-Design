@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.flex-box{
+    display: flex;
+    width: 1000px;
+    margin: 90px auto;
+}
+
+.flex-box .hide{
+    display: none;
+}
+
+.flex-box .active{
+    display: flex;
+}
+.left{
+    width: 40%;
+}
+.big-img{
+    width: 250px;
+}
+.big-img img{
+    width: inherit;
+    cursor: pointer;
+}
+.images{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 15px;
+}
+.small-img{
+    width: 50px;
+    overflow: hidden;
+    border: 1.5px solid black;
+}
+.small-img-1, .small-img-2, .small-img-3, .small-img-4{
+    width: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px;
+    
+}
+.small-img:hover img{
+    transform: scale(1.2);
+}
+.url{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(0, 102, 255);
+}
+.pname{
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+.ratings i{
+    color: rgb(255, 136, 0);
+}
+.price{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+.size{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.size p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.psize{
+    width: 60px;
+    height: 30px;
+    border: 1px solid #ff5e00;
+    color: #000;
+    text-align: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.psize.active{
+    border-width: 1.5px;
+    color: #ff5e00;
+    font-weight: 500;
+}
+.quantity{
+    display: flex;
+}
+.quantity p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.quantity input{
+    width: 40px;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    margin-left: 15px;
+}
+.btn-box{
+    display: flex;
+    margin-top: 40px;
+}
+.btn-box button{
+    font-size: 18px;
+    padding: 8px 25px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+.cart-btn{
+    background-color: #ff5e00;
+    margin-right: 20px;
+}
+.buy-btn{
+    background-color: #00aeff;
+}
+.cart-btn:hover{
+    background-color: #ff3c00;
+}
+.buy-btn:hover{
+    background-color: #0066ff;
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 102, 255);
+}
+
+
+
+/*-------------------------------------------------Thông số kỹ thuật-------------------------------------------------*/
+.detail_product {
+    margin-top: 50px;
+    display: absolute; 
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;    /* Căn giữa theo chiều dọc nếu cần */
+}
+.detail_product .active{
+    display: absolute;
+}
+
+.detail_product .hide{
+    display: none;
+}
+.detail_product h2{
+    margin: 50px auto;  
+    width: 1100px;
+    background-color: #fff;
+    text-align: center;
+    color: black;
+    border-radius: 5px;
+}
+
+table {
+    background-color: #EEEEEE;
+    /* width: 40%; */
+    margin: 50px auto;
+    border-collapse: collapse;
+    border-radius: 10px; /* Thêm border-radius cho khung bảng */
+    overflow: hidden; /* Đảm bảo các phần tử con không bị tràn ra khỏi khung bảng */
+}
+
+td {
+    /* border-top: 1px solid black;
+    border-bottom: 1px solid black; */
+    padding: 10px;
+    width: 50%;
+    
+}
+
+td.nameTag {
+    width: auto;
+    /* border-left: 1px solid black; */
+    padding-left: 40px;
+    padding-right: 100px;
+}
+
+
+
+
