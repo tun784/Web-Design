@@ -503,7 +503,7 @@ function logOut() {
     }
 
     localStorage.removeItem('currentuser');
-    window.location = "./web.html";
+    window.location = "./index.html";
 }
 
 function emailIsValid(email) {

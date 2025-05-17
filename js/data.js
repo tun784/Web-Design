@@ -694,7 +694,7 @@ function removeOldCards() {
   document.querySelectorAll("#pr").forEach(pr => {
     pr.addEventListener("click", () => {
       if (window.location.pathname === '/product_detai.html') {
-        window.location.href = './web.html';
+        window.location.href = './index.html';
     }
     
       removeOldCards();
